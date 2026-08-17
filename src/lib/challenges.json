@@ -17,7 +17,30 @@
         "You’re right!",
         "My name is Vector!",
         "I was named for the fuzzy \"V\" shape on my right fluke."
-      ]
+      ],
+      "highlight": { "left": 697, "top": 285, "size": 132 }
+    }
+  },
+  {
+    "slug": "whale2",
+    "title": "Whale Challenge 2 of 4",
+    "correctOptionId": "opt2",
+    "targetImage": "whale2/target.jpg",
+    "options": [
+      { "id": "opt1", "imageName": "whale2/opt1.jpg" },
+      { "id": "opt2", "imageName": "whale2/opt2.jpg" },
+      { "id": "opt3", "imageName": "whale2/opt3.jpg" },
+      { "id": "opt4", "imageName": "whale2/opt4.jpg" },
+      { "id": "opt5", "imageName": "whale2/opt5.jpg" },
+      { "id": "opt6", "imageName": "whale2/opt6.jpg" }
+    ],
+    "correctReveal": {
+      "lines": [
+        "PLACEHOLDER — Figma has no whale#2-correct frame.",
+        "Needs this whale’s name and the story",
+        "behind it before review."
+      ],
+      "highlight": null
     }
   }
 ]

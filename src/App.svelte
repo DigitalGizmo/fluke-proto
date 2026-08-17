@@ -49,8 +49,15 @@
     lastSelectedOptionId = null;
   }
 
-  // TODO (multi-challenge): advance currentChallengeIndex instead of restarting.
   function nextChallenge() {
+    if (currentChallengeIndex < challenges.length - 1) {
+      currentChallengeIndex += 1;
+    } else {
+      // Only whales #1-#2 are built; the design has four. Loop back to the
+      // attract screen so the prototype stays demoable end to end.
+      currentChallengeIndex = 0;
+      screen = 'attract';
+    }
     resetChallenge();
   }
 </script>

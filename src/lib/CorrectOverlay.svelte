@@ -11,8 +11,20 @@
     <img src="{ASSETS_BASE}/{image}" alt="The matching whale fluke" />
   </div>
 
-  <!-- Orange ring calling out the marking the whale is named for (node 268:26). -->
-  <img class="highlight" src="{ASSETS_BASE}/whale1/highlight.svg" alt="" />
+  <!-- Orange ring calling out the marking the whale is named for (node 268:26).
+       Only whale#1 has one positioned in the design, so it is per-challenge. -->
+  {#if reveal.highlight}
+    <svg
+      class="highlight"
+      style="left:{reveal.highlight.left}px; top:{reveal.highlight.top}px;
+             width:{reveal.highlight.size}px; height:{reveal.highlight.size}px;"
+      viewBox="0 0 132 132"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle cx="66" cy="66" r="63.5" stroke="var(--highlight)" stroke-width="5" />
+    </svg>
+  {/if}
 
   <div class="story">
     {#each reveal.lines as line}
@@ -51,10 +63,7 @@
 
   .highlight {
     position: absolute;
-    left: 697px;
-    top: 285px;
-    width: 132px;
-    height: 132px;
+    display: block;
   }
 
   .story {
