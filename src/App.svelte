@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import challenges from './lib/challenges.json';
   import Stage from './lib/Stage.svelte';
   import Attract from './lib/Attract.svelte';
@@ -7,8 +8,14 @@
   import CorrectOverlay from './lib/CorrectOverlay.svelte';
   import CluesOverlay from './lib/CluesOverlay.svelte';
 
-  let screen = $state(/** @type {'attract' | 'challenge'} */ ('attract'));
-  // Kept as real state rather than a constant so adding whales #2-#4 is a drop-in.
+  // Build config comes from .env files (see .env, .env.web, .env.review,
+  // .env.kiosk). Run with: npm run dev | dev:local | dev:review | dev:kiosk
+  const isAttract = import.meta.env.VITE_ATTRACT === 'true';
+
+  const ATTRACT_TIMEOUT = 120_000; // inactivity delay before returning to attract
+
+  let screen = $state(/** @type {'attract' | 'challenge'} */ (isAttract ? 'attract' : 'challenge'));
+  // Kept as real state rather than a constant so adding whales #3-#4 is a drop-in.
   let currentChallengeIndex = $state(0);
   // Options the user got wrong AND confirmed with "Try again". Grows across
   // attempts within a challenge; cleared only when the challenge restarts.
@@ -20,6 +27,8 @@
   // `overlay`, so closing it returns to the state underneath rather than
   // dismissing an incorrect/correct panel the user hasn't answered yet.
   let cluesOpen = $state(false);
+
+  let timeoutId = /** @type {number | undefined} */ (undefined);
 
   let challenge = $derived(challenges[currentChallengeIndex]);
   // The reveal panel shows the winning fluke, so derive it from correctOptionId
@@ -33,6 +42,21 @@
     overlay = null;
     lastSelectedOptionId = null;
     cluesOpen = false;
+  }
+
+  function goToAttract() {
+    currentChallengeIndex = 0;
+    screen = 'attract';
+    resetChallenge();
+  }
+
+  function resetTimeout() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(goToAttract, ATTRACT_TIMEOUT);
+  }
+
+  function handleUserActivity() {
+    if (screen !== 'attract') resetTimeout();
   }
 
   /** @param {string} id */
@@ -52,19 +76,36 @@
   function nextChallenge() {
     if (currentChallengeIndex < challenges.length - 1) {
       currentChallengeIndex += 1;
+      resetChallenge();
     } else {
-      // Only whales #1-#2 are built; the design has four. Loop back to the
-      // attract screen so the prototype stays demoable end to end.
-      currentChallengeIndex = 0;
-      screen = 'attract';
+      // Only whales #1-#2 are built; the design has four. In attract builds fall
+      // back to the attract loop, otherwise start over from the first whale.
+      if (isAttract) goToAttract();
+      else { currentChallengeIndex = 0; resetChallenge(); }
     }
-    resetChallenge();
   }
+
+  onMount(() => {
+    if (!isAttract) return;
+
+    window.addEventListener('click', handleUserActivity);
+    window.addEventListener('touchstart', handleUserActivity);
+    window.addEventListener('mousemove', handleUserActivity);
+    window.addEventListener('keydown', handleUserActivity);
+
+    return () => {
+      window.removeEventListener('click', handleUserActivity);
+      window.removeEventListener('touchstart', handleUserActivity);
+      window.removeEventListener('mousemove', handleUserActivity);
+      window.removeEventListener('keydown', handleUserActivity);
+      clearTimeout(timeoutId);
+    };
+  });
 </script>
 
 <Stage>
   {#if screen === 'attract'}
-    <Attract onBegin={() => { screen = 'challenge'; resetChallenge(); }} />
+    <Attract onBegin={() => { screen = 'challenge'; resetChallenge(); resetTimeout(); }} />
   {:else}
     <ChallengeScreen
       {challenge}
