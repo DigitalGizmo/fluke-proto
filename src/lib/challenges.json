@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "whale1",
+    "title": "Whale Challenge 1 of 4",
+    "correctOptionId": "opt1",
+    "targetImage": "whale1/target.jpg",
+    "options": [
+      { "id": "opt1", "imageName": "whale1/opt1.jpg" },
+      { "id": "opt2", "imageName": "whale1/opt2.jpg" },
+      { "id": "opt3", "imageName": "whale1/opt3.jpg" },
+      { "id": "opt4", "imageName": "whale1/opt4.jpg" },
+      { "id": "opt5", "imageName": "whale1/opt5.jpg" },
+      { "id": "opt6", "imageName": "whale1/opt6.png" }
+    ],
+    "correctReveal": {
+      "lines": [
+        "You’re right!",
+        "My name is Vector!",
+        "I was named for the fuzzy \"V\" shape on my right fluke."
+      ]
+    }
+  }
+]

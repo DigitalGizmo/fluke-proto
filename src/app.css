@@ -1,0 +1,60 @@
+/* Sedan — the design's typeface. Google Fonts, SIL Open Font License,
+   self-hosted here the same way maine-maps carries GitanLatnWeb. */
+@font-face {
+  font-family: "Sedan";
+  src: url('./assets/fonts/sedan/Sedan-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sedan";
+  src: url('./assets/fonts/sedan/Sedan-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Colors read from the Figma layers (the file defines no Figma variables —
+   get_variable_defs returns {} — so these come from the layer fills). */
+:root {
+  --navy-deep: #042437;     /* frame background / header band */
+  --navy-panel: #12435c;    /* bottom-area panel, "Tap to Begin" plate */
+  --btn-bg: #476388;        /* button fill */
+  --btn-border: #739bc9;    /* button stroke */
+  --text-pale: #cee9f4;     /* title + intro paragraph */
+  --option-border: #8c8c8c; /* fluke option stroke */
+  --highlight: #fc9c02;     /* orange ring on the correct reveal */
+  --clues-accent: #a0bcc7;  /* Clues headings and rules */
+
+  --font: "Sedan", serif;
+
+  /* The Figma frame is 1920x1080. Everything inside .stage is authored at
+     those exact pixel values and scaled to fit the viewport, so the prototype
+     stays pixel-faithful to the comp on any screen. */
+  --stage-w: 1920;
+  --stage-h: 1080;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font);
+  background: #000;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
