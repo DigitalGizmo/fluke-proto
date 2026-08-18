@@ -1,0 +1,9 @@
+I'm building a click-through Svelte prototype of a whale fluke matching game, based on a Figma design. Full spec is in `CLAUDE.md` in this repo/folder — read it first.
+
+Before writing any code, look at /Users/don/Sites/maine_maps_project/maine-maps to pick up my conventions for Svelte recemt project structure, component style, and CSS/styling approach, and follow those patterns here rather than defaulting to generic scaffolding. Also look at /Users/don/Sites/lombard-invent/ for a more game-like approach and specifically at /Users/don/Sites/lombard-invent/src/lib/challenges2.json for a format I've used before for choice logic and names.
+
+Use the Figma MCP server to pull the actual design from the Whales-FlukeID file: the `whale#1` challenge frame, the six `flame-opt1`–`flame-opt6` tail option images and the target tail image, the `incorrect` overlay ("Sorry, wrong whale!") and its two buttons ("Try again" / "Try another whale"), and the `whale#1-correct` reveal panel (whale name + story text + "Next challenge" button). Pull real image assets and copy text from Figma rather than guessing — don't reuse placeholder images if the MCP can export the real ones.
+
+Build this as a Svelte component implementing exactly one challenge (whale#1) with all six options clickable, per the state/interaction flow in the spec doc. Leave `correctOptionId` as an obvious, easy-to-edit config value since which tail is correct hasn't been decided yet.
+
+Start by confirming your read of the spec and asking me anything that's still ambiguous before you start building. I will need help setting up the Figma MCP server.
