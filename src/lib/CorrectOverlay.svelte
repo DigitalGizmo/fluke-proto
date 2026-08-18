@@ -32,7 +32,9 @@
     {/each}
   </div>
 
-  <button class="btn-next" onclick={onNext}>Try the next whale</button>
+  <button class="btn-next" style="top:{reveal.buttonTop}px;" onclick={onNext}>
+    {reveal.buttonLabel}
+  </button>
 </div>
 
 <style>
@@ -81,10 +83,11 @@
     line-height: normal;
   }
 
+  /* `top` is set per challenge from the data — whale#1 sits at 544, whale#4's
+     longer story pushes its button to 597. */
   .btn-next {
     position: absolute;
     left: 1258px;
-    top: 544px;
     width: 250px;
     height: 59px;
     background: var(--btn-bg);

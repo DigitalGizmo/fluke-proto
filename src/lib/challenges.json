@@ -5,20 +5,44 @@
     "correctOptionId": "opt1",
     "targetImage": "whale1/target.jpg",
     "options": [
-      { "id": "opt1", "imageName": "whale1/opt1.jpg" },
-      { "id": "opt2", "imageName": "whale1/opt2.jpg" },
-      { "id": "opt3", "imageName": "whale1/opt3.jpg" },
-      { "id": "opt4", "imageName": "whale1/opt4.jpg" },
-      { "id": "opt5", "imageName": "whale1/opt5.jpg" },
-      { "id": "opt6", "imageName": "whale1/opt6.jpg" }
+      {
+        "id": "opt1",
+        "imageName": "whale1/opt1.jpg"
+      },
+      {
+        "id": "opt2",
+        "imageName": "whale1/opt2.jpg"
+      },
+      {
+        "id": "opt3",
+        "imageName": "whale1/opt3.jpg"
+      },
+      {
+        "id": "opt4",
+        "imageName": "whale1/opt4.jpg"
+      },
+      {
+        "id": "opt5",
+        "imageName": "whale1/opt5.jpg"
+      },
+      {
+        "id": "opt6",
+        "imageName": "whale1/opt6.jpg"
+      }
     ],
     "correctReveal": {
       "lines": [
-        "You’re right!",
+        "You're right!",
         "My name is Vector!",
         "I was named for the fuzzy \"V\" shape on my right fluke."
       ],
-      "highlight": { "left": 697, "top": 285, "size": 132 }
+      "highlight": {
+        "left": 697,
+        "top": 285,
+        "size": 132
+      },
+      "buttonLabel": "Try the next whale",
+      "buttonTop": 544
     }
   },
   {
@@ -27,12 +51,30 @@
     "correctOptionId": "opt2",
     "targetImage": "whale2/target.jpg",
     "options": [
-      { "id": "opt1", "imageName": "whale2/opt1.jpg" },
-      { "id": "opt2", "imageName": "whale2/opt2.jpg" },
-      { "id": "opt3", "imageName": "whale2/opt3.jpg" },
-      { "id": "opt4", "imageName": "whale2/opt4.jpg" },
-      { "id": "opt5", "imageName": "whale2/opt5.jpg" },
-      { "id": "opt6", "imageName": "whale2/opt6.jpg" }
+      {
+        "id": "opt1",
+        "imageName": "whale2/opt1.jpg"
+      },
+      {
+        "id": "opt2",
+        "imageName": "whale2/opt2.jpg"
+      },
+      {
+        "id": "opt3",
+        "imageName": "whale2/opt3.jpg"
+      },
+      {
+        "id": "opt4",
+        "imageName": "whale2/opt4.jpg"
+      },
+      {
+        "id": "opt5",
+        "imageName": "whale2/opt5.jpg"
+      },
+      {
+        "id": "opt6",
+        "imageName": "whale2/opt6.jpg"
+      }
     ],
     "correctReveal": {
       "lines": [
@@ -40,7 +82,9 @@
         "name and the story behind it.",
         "No whale#2-correct frame in Figma."
       ],
-      "highlight": null
+      "highlight": null,
+      "buttonLabel": "Try the next whale",
+      "buttonTop": 544
     }
   },
   {
@@ -49,12 +93,30 @@
     "correctOptionId": "opt1",
     "targetImage": "whale3/target.JPG",
     "options": [
-      { "id": "opt1", "imageName": "whale3/opt1.JPG" },
-      { "id": "opt2", "imageName": "whale3/opt2.JPG" },
-      { "id": "opt3", "imageName": "whale3/opt3.JPG" },
-      { "id": "opt4", "imageName": "whale3/opt4.JPG" },
-      { "id": "opt5", "imageName": "whale3/opt5.JPG" },
-      { "id": "opt6", "imageName": "whale3/opt6.JPG" }
+      {
+        "id": "opt1",
+        "imageName": "whale3/opt1.JPG"
+      },
+      {
+        "id": "opt2",
+        "imageName": "whale3/opt2.JPG"
+      },
+      {
+        "id": "opt3",
+        "imageName": "whale3/opt3.JPG"
+      },
+      {
+        "id": "opt4",
+        "imageName": "whale3/opt4.JPG"
+      },
+      {
+        "id": "opt5",
+        "imageName": "whale3/opt5.JPG"
+      },
+      {
+        "id": "opt6",
+        "imageName": "whale3/opt6.JPG"
+      }
     ],
     "correctReveal": {
       "lines": [
@@ -62,29 +124,51 @@
         "correctOptionId is a guess (opt1);",
         "needs the real match, name and story."
       ],
-      "highlight": null
+      "highlight": null,
+      "buttonLabel": "Try the next whale",
+      "buttonTop": 544
     }
   },
   {
     "slug": "whale4",
     "title": "Whale Challenge 4 of 4",
-    "correctOptionId": "opt1",
+    "correctOptionId": "opt4",
     "targetImage": "whale4/target.JPG",
     "options": [
-      { "id": "opt1", "imageName": "whale4/opt1.JPG" },
-      { "id": "opt2", "imageName": "whale4/opt2.JPG" },
-      { "id": "opt3", "imageName": "whale4/opt3.JPG" },
-      { "id": "opt4", "imageName": "whale4/opt4.JPG" },
-      { "id": "opt5", "imageName": "whale4/opt5.JPG" },
-      { "id": "opt6", "imageName": "whale4/opt6.JPG" }
+      {
+        "id": "opt1",
+        "imageName": "whale4/opt1.JPG"
+      },
+      {
+        "id": "opt2",
+        "imageName": "whale4/opt2.JPG"
+      },
+      {
+        "id": "opt3",
+        "imageName": "whale4/opt3.JPG"
+      },
+      {
+        "id": "opt4",
+        "imageName": "whale4/opt4.JPG"
+      },
+      {
+        "id": "opt5",
+        "imageName": "whale4/opt5.JPG"
+      },
+      {
+        "id": "opt6",
+        "imageName": "whale4/opt6.JPG"
+      }
     ],
     "correctReveal": {
       "lines": [
-        "PLACEHOLDER — answer key not set.",
-        "correctOptionId is a guess (opt1);",
-        "needs the real match, name and story."
+        "That’s correct!",
+        "My name is Photuris which is a kind of firefly. I got this name because of the white spots on my overall black tail, which look like the signalling of fireflies at night.",
+        "That’s all – thanks for playing!"
       ],
-      "highlight": null
+      "highlight": null,
+      "buttonLabel": "Play again",
+      "buttonTop": 597
     }
   }
 ]

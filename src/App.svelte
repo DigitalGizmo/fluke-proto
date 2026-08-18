@@ -12,7 +12,12 @@
   // .env.kiosk). Run with: npm run dev | dev:local | dev:review | dev:kiosk
   const isAttract = import.meta.env.VITE_ATTRACT === 'true';
 
-  const ATTRACT_TIMEOUT = 120_000; // inactivity delay before returning to attract
+  // Idle reset exists only in the unattended builds, and always returns to the
+  // attract loop — a page in an ordinary browser tab should stay put. Seconds,
+  // from VITE_IDLE_TIMEOUT (set in .env.review and .env.kiosk); 0 disables.
+  const IDLE_TIMEOUT = isAttract
+    ? Number(import.meta.env.VITE_IDLE_TIMEOUT ?? 300) * 1000
+    : 0;
 
   let screen = $state(/** @type {'attract' | 'challenge'} */ (isAttract ? 'attract' : 'challenge'));
   // Kept as real state rather than a constant so adding whales #3-#4 is a drop-in.
@@ -52,7 +57,7 @@
 
   function resetTimeout() {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(goToAttract, ATTRACT_TIMEOUT);
+    if (IDLE_TIMEOUT > 0) timeoutId = setTimeout(goToAttract, IDLE_TIMEOUT);
   }
 
   function handleUserActivity() {
@@ -73,20 +78,19 @@
     lastSelectedOptionId = null;
   }
 
+  // Drives the reveal panel's button. On whales #1-#3 it advances; on the last
+  // whale the button reads "Play again" and wraps back to whale #1. The attract
+  // loop is reached by timing out, never by pressing this.
   function nextChallenge() {
-    if (currentChallengeIndex < challenges.length - 1) {
-      currentChallengeIndex += 1;
-      resetChallenge();
-    } else {
-      // Only whales #1-#2 are built; the design has four. In attract builds fall
-      // back to the attract loop, otherwise start over from the first whale.
-      if (isAttract) goToAttract();
-      else { currentChallengeIndex = 0; resetChallenge(); }
-    }
+    currentChallengeIndex =
+      currentChallengeIndex < challenges.length - 1 ? currentChallengeIndex + 1 : 0;
+    resetChallenge();
+    resetTimeout();
   }
 
   onMount(() => {
-    if (!isAttract) return;
+    if (IDLE_TIMEOUT <= 0) return;
+    resetTimeout();
 
     window.addEventListener('click', handleUserActivity);
     window.addEventListener('touchstart', handleUserActivity);
