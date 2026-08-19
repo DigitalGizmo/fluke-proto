@@ -33,7 +33,7 @@
     "correctReveal": {
       "lines": [
         "You're right!",
-        "My name is Vector!",
+        "My name is Vector.",
         "I was named for the fuzzy \"V\" shape on my right fluke."
       ],
       "highlight": {
@@ -78,11 +78,15 @@
     ],
     "correctReveal": {
       "lines": [
-        "PLACEHOLDER — needs this whale’s",
-        "name and the story behind it.",
-        "No whale#2-correct frame in Figma."
+        "Correct!",
+        "My name is Jigsaw.",
+        "I was named for pigmentation on the right side of my tail that looks like two interlocked puzzle pieces."
       ],
-      "highlight": null,
+      "highlight": {
+        "left": 720,
+        "top": 330,
+        "size": 150
+      },
       "buttonLabel": "Try the next whale",
       "buttonTop": 544
     }
@@ -90,7 +94,7 @@
   {
     "slug": "whale3",
     "title": "Whale Challenge 3 of 4",
-    "correctOptionId": "opt1",
+    "correctOptionId": "opt5",
     "targetImage": "whale3/target.JPG",
     "options": [
       {
@@ -120,11 +124,15 @@
     ],
     "correctReveal": {
       "lines": [
-        "PLACEHOLDER — answer key not set.",
-        "correctOptionId is a guess (opt1);",
-        "needs the real match, name and story."
+        "Right again!",
+        "My name is Hornet.",
+        "I was named for the marks on the left side of my tail that look like the shape of an insect."
       ],
-      "highlight": null,
+      "highlight": {
+        "left": 325,
+        "top": 265,
+        "size": 200
+      },
       "buttonLabel": "Try the next whale",
       "buttonTop": 544
     }
