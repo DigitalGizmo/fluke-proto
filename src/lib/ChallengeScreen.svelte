@@ -13,8 +13,7 @@
     'Humpback whales have unique patterns of black and white pigmentation and ' +
     'scars on the underside of their flukes or tails. Like fingerprints are to ' +
     'humans, no two whales have the same patterns. These patterns are the ' +
-    'inspiration for each whale’s name.';
-  const GAME_SUBINTRO =
+    'inspiration for each whale’s name. ' +
     'See if you can match the patterns and learn these whales names. ' +
     'There are four challenges.';
   const TAP_PROMPT = 'Tap the whale tail below that matches';
@@ -33,7 +32,6 @@
 
 <h1 class="game-title">{GAME_TITLE}</h1>
 <p class="game-intro">{GAME_INTRO}</p>
-<p class="game-subintro">{GAME_SUBINTRO}</p>
 
 <div class="bottom-area">
   <p class="challenge-label">{challenge.title}</p>
@@ -81,18 +79,6 @@
     font-size: 28px;
     line-height: normal;
     color: var(--text-pale);
-  }
-
-  .game-subintro {
-    position: absolute;
-    left: 1157px;
-    top: 236px;
-    width: 717px;
-    height: 88px;
-    margin: 0;
-    font-size: 32px;
-    line-height: normal;
-    color: #fff;
   }
 
   .bottom-area {
