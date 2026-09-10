@@ -1,66 +1,67 @@
 <script>
   import TailOption from './TailOption.svelte';
 
-  let { challenge, disabledOptionIds, onSelect, onClues } = $props();
+  let { challenge, disabledOptionIds, onSelect, onClues, overlayOpen = false } = $props();
 
   const ASSETS_BASE = import.meta.env.VITE_IMAGE_BASE;
 
-  // Copy read from the Figma text layers of frame whale#1 (node 3:34).
-  // Header chrome is identical across whale#1-#4, so it lives here rather than
-  // in the per-challenge data.
+  // Copy read from the Figma challenge#1 / challenge#2 text layers.
   const GAME_TITLE = 'Fluke Matching Game';
   const GAME_INTRO =
     'Humpback whales have unique patterns of black and white pigmentation and ' +
     'scars on the underside of their flukes or tails. Like fingerprints are to ' +
     'humans, no two whales have the same patterns. These patterns are the ' +
-    'inspiration for each whale’s name. ' +
-    'See if you can match the patterns and learn these whales names. ' +
+    'inspiration for each whale’s name.';
+  const GAME_SUBINTRO =
+    'Try to match the fluke patterns and learn these whales’ names. ' +
     'There are four challenges.';
-  const TAP_PROMPT = 'Tap the whale tail below that matches';
+  const TAP_PROMPT = 'Tap the whale tail below that you think matches the tail on the left.';
 
-  // Option slot positions, relative to .bottom-area, straight from the Figma
-  // option frames (2 columns x 3 rows, 320x175 each).
+  // Option slots, relative to .bottom-area. Row-major, matching challenge#2 —
+  // challenge#1's layers are arranged down the columns instead, but that reads
+  // as a stray rearrangement rather than intent, and row-major is what the
+  // existing correctOptionId values were verified against.
   const OPTION_POS = [
-    { left: 1157, top: 69 },
-    { left: 1497, top: 69 },
-    { left: 1156, top: 260 },
-    { left: 1497, top: 260 },
-    { left: 1156, top: 454 },
-    { left: 1497, top: 454 },
+    { left: 1003, top: 32 },
+    { left: 1430, top: 32 },
+    { left: 1003, top: 269 },
+    { left: 1430, top: 269 },
+    { left: 1003, top: 507 },
+    { left: 1430, top: 507 },
   ];
 </script>
 
 <h1 class="game-title">{GAME_TITLE}</h1>
 <p class="game-intro">{GAME_INTRO}</p>
+<p class="game-subintro">{GAME_SUBINTRO}</p>
+<p class="tap-prompt">{TAP_PROMPT}</p>
+<button class="btn-clues" onclick={onClues}>Tips for Matching</button>
 
 <div class="bottom-area">
-  <p class="challenge-label">{challenge.title}</p>
-  <p class="tap-prompt">{TAP_PROMPT}</p>
-
   <div class="flame">
     <img src="{ASSETS_BASE}/{challenge.targetImage}" alt="The whale fluke to match" />
   </div>
+
+  <p class="challenge-label">{challenge.title}</p>
 
   {#each challenge.options as option, i (option.id)}
     <TailOption
       {option}
       left={OPTION_POS[i].left}
       top={OPTION_POS[i].top}
-      disabled={disabledOptionIds.includes(option.id)}
+      ruledOut={disabledOptionIds.includes(option.id)}
+      inert={overlayOpen}
       {onSelect}
     />
   {/each}
-
-  <button class="btn-clues" onclick={onClues}>Clues &amp; Tips</button>
 </div>
 
 <style>
-  /* All values below are the Figma frame's own pixel coordinates. The parent
-     <Stage> scales the whole 1920x1080 canvas to fit the viewport. */
+  /* Figma frame coordinates; <Stage> scales the 1920x1080 canvas to fit. */
   .game-title {
     position: absolute;
-    left: 91px;
-    top: 42px;
+    left: 75px;
+    top: 32px;
     margin: 0;
     font-size: 72px;
     font-weight: 400;
@@ -71,9 +72,9 @@
 
   .game-intro {
     position: absolute;
-    left: 91px;
-    top: 121.5px;
-    width: 1000px;
+    left: 75px;
+    top: 111px;
+    width: 874px;
     height: 170px;
     margin: 0;
     font-size: 28px;
@@ -81,50 +82,35 @@
     color: var(--text-pale);
   }
 
-  .bottom-area {
+  .game-subintro {
     position: absolute;
-    left: 1px;
-    top: 328px;
-    width: 1920px;
-    height: 750px;
-    background: var(--navy-panel);
-  }
-
-  .challenge-label,
-  .tap-prompt {
-    position: absolute;
-    top: 20px;
-    width: 424px;
-    height: 31px;
+    left: 1003px;
+    top: 111px;
+    width: 810px;
+    height: 68px;
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     line-height: normal;
     color: #fff;
   }
 
-  .challenge-label { left: 90px; }
-  .tap-prompt { left: 1156px; }
-
-  .flame {
+  .tap-prompt {
     position: absolute;
-    left: 90px;
-    top: 68px;
-    width: 1042px;
-    height: 563px;
-  }
-
-  .flame img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    left: 1003px;
+    top: 179px;
+    width: 824px;
+    height: 50px;
+    margin: 0;
+    font-size: 28px;
+    line-height: normal;
+    color: #fff;
   }
 
   .btn-clues {
     position: absolute;
-    left: 1619px;
-    top: 658px;
-    width: 198px;
+    left: 1003px;
+    top: 229px;
+    width: 220px;
     height: 59px;
     background: var(--btn-bg);
     border: 1px solid var(--btn-border);
@@ -132,5 +118,41 @@
     color: #fff;
     font-size: 24px;
     line-height: normal;
+  }
+
+  .bottom-area {
+    position: absolute;
+    left: 0;
+    top: 310px;
+    width: 1920px;
+    height: 770px;
+    background: var(--navy-panel);
+  }
+
+  .flame {
+    position: absolute;
+    left: 68px;
+    top: 32px;
+    width: 892px;
+    height: 482px;
+  }
+
+  .flame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .challenge-label {
+    position: absolute;
+    left: 68px;
+    top: 544px;
+    width: 424px;
+    height: 31px;
+    margin: 0;
+    font-size: 32px;
+    line-height: normal;
+    color: #fff;
   }
 </style>

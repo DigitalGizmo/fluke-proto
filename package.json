@@ -13,6 +13,7 @@
     "build:review": "vite build --mode review",
     "build:kiosk": "vite build --mode kiosk",
     "preview": "vite preview",
+    "preview:web": "vite preview --mode web",
     "preview:review": "vite preview --mode review",
     "preview:kiosk": "vite preview --mode kiosk"
   },

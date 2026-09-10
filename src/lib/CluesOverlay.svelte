@@ -52,8 +52,8 @@
   const IMG_LEFT = [1273, 1549];
 </script>
 
-<!-- Figma frame `Clues` (node 13:142) is 1920x750 — like the other overlays it
-     covers the bottom-area, leaving the header visible. -->
+<!-- Figma frame `Clues` (node 13:142) is 1920x770 — unlike the confirm and
+     feedback panels this one still spans the full bottom-area. -->
 <div class="clues">
   <h2 class="title">Tips for<br />Fluke<br />Matching</h2>
 
@@ -87,9 +87,9 @@
   .clues {
     position: absolute;
     left: 0;
-    top: 328px;
+    top: 310px;
     width: 1920px;
-    height: 750px;
+    height: 770px;
     background: var(--navy-panel);
     z-index: 20;
   }

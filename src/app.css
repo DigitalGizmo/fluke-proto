@@ -25,6 +25,10 @@
   --btn-border: #739bc9;    /* button stroke */
   --text-pale: #cee9f4;     /* title + intro paragraph */
   --option-border: #8c8c8c; /* fluke option stroke */
+  --panel: #477388;         /* confirm / feedback overlay ground */
+  --panel-border: #12435c;
+  --btn-light: #cee9f4;     /* overlay buttons: light fill, dark text */
+  --btn-light-text: #12435c;
   --highlight: #fc9c02;     /* orange ring on the correct reveal */
   --clues-accent: #a0bcc7;  /* Clues headings and rules */
 

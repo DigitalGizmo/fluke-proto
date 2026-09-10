@@ -32,17 +32,14 @@
     ],
     "correctReveal": {
       "lines": [
-        "You're right!",
-        "My name is Vector.",
-        "I was named for the fuzzy \"V\" shape on my right fluke."
+        "You’re right!",
+        "My name is Vector!  I was named for the fuzzy \"V\" shape on my right fluke."
       ],
       "highlight": {
-        "left": 697,
-        "top": 285,
-        "size": 132
-      },
-      "buttonLabel": "Try the next whale",
-      "buttonTop": 544
+        "left": 539,
+        "top": 193,
+        "size": 110
+      }
     }
   },
   {
@@ -79,16 +76,13 @@
     "correctReveal": {
       "lines": [
         "Correct!",
-        "My name is Jigsaw.",
-        "I was named for pigmentation on the right side of my tail that looks like two interlocked puzzle pieces."
+        "My name is Jigsaw. I was named for pigmentation on the right side of my tail that looks like two interlocked puzzle pieces."
       ],
       "highlight": {
-        "left": 720,
-        "top": 330,
-        "size": 150
-      },
-      "buttonLabel": "Try the next whale",
-      "buttonTop": 544
+        "left": 558,
+        "top": 227,
+        "size": 127
+      }
     }
   },
   {
@@ -125,16 +119,13 @@
     "correctReveal": {
       "lines": [
         "Right again!",
-        "My name is Bowline.",
-        "I was named for the lines on my right fluke that look like a knot in the process of being tied. A bowline is a type of knot used often on ships."
+        "My name is Bowline. I was named for the lines on my right fluke that look like a knot in the process of being tied. A bowline is a type of knot used often on ships."
       ],
       "highlight": {
-        "left": 800,
-        "top": 235,
-        "size": 200
-      },
-      "buttonLabel": "Try the next whale",
-      "buttonTop": 544
+        "left": 626,
+        "top": 147,
+        "size": 169
+      }
     }
   },
   {
@@ -174,9 +165,7 @@
         "My name is Photuris which is a kind of firefly. I got this name because of the white spots on my overall black tail, which look like the signalling of fireflies at night.",
         "That’s all – thanks for playing!"
       ],
-      "highlight": null,
-      "buttonLabel": "Play again",
-      "buttonTop": 597
+      "highlight": null
     }
   }
 ]
