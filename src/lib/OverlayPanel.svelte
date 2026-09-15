@@ -39,11 +39,11 @@
 <style>
   .panel {
     position: absolute;
-    left: 969px;
+    left: 984px;
     top: 310px;
-    width: 951px;
+    width: 940px;
     height: 770px;
-    background: var(--panel);
+    background: #3f697d;
     border: 1px solid var(--panel-border);
     box-sizing: border-box;
     z-index: 10;
@@ -51,10 +51,10 @@
 
   .flame {
     position: absolute;
-    left: 34px;
-    top: 30px;
+    left: 24px;
+    top: 32px;
     width: 880px;
-    height: 475px;
+    height: 480px;
   }
 
   .flame img {
@@ -79,7 +79,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 6px;
+    padding-top: 1em;
     box-sizing: border-box;
   }
 </style>

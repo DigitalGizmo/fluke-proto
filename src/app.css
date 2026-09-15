@@ -21,7 +21,7 @@
 :root {
   --navy-deep: #042437;     /* frame background / header band */
   --navy-panel: #12435c;    /* bottom-area panel, "Tap to Begin" plate */
-  --btn-bg: #476388;        /* button fill */
+  --btn-bg: #3f697d;        /* button fill */
   --btn-border: #739bc9;    /* button stroke */
   --text-pale: #cee9f4;     /* title + intro paragraph */
   --option-border: #8c8c8c; /* fluke option stroke */

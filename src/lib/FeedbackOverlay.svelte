@@ -41,7 +41,7 @@
 <style>
   .copy {
     width: 808px;
-    font-size: 38px;
+    font-size: 28px;
     line-height: normal;
     text-align: center;
     color: #fff;
@@ -56,7 +56,7 @@
     width: 250px;
     height: 59px;
     padding: 0;
-    margin-top: 24px;
+    margin-top: 12px;
     background: var(--btn-light);
     border: 1px solid var(--btn-border);
     border-radius: 5px;
