@@ -42,7 +42,7 @@
   .copy {
     width: 808px;
     font-size: 28px;
-    line-height: normal;
+    line-height: 32px;
     text-align: center;
     color: #fff;
   }

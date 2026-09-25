@@ -1,20 +1,27 @@
 /* Sedan — the design's typeface. Google Fonts, SIL Open Font License,
    self-hosted here the same way maine-maps carries GitanLatnWeb. */
-@font-face {
+/*@font-face {
   font-family: "Sedan";
   src: url('./assets/fonts/sedan/Sedan-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+}*/
 
 @font-face {
+  font-family: "Noto Sans";
+  src: url('./assets/fonts/noto-sans/NotoSans.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+/*@font-face {
   font-family: "Sedan";
   src: url('./assets/fonts/sedan/Sedan-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-}
+}*/
 
 /* Colors read from the Figma layers (the file defines no Figma variables —
    get_variable_defs returns {} — so these come from the layer fills). */
@@ -32,7 +39,8 @@
   --highlight: #fc9c02;     /* orange ring on the correct reveal */
   --clues-accent: #a0bcc7;  /* Clues headings and rules */
 
-  --font: "Sedan", serif;
+  /*--font: "Sedan", serif;*/
+  --font: "Noto Sans", system-ui, sans-serif;
 
   /* The Figma frame is 1920x1080. Everything inside .stage is authored at
      those exact pixel values and scaled to fit the viewport, so the prototype

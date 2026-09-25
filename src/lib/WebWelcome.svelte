@@ -68,7 +68,8 @@
     overflow: hidden;
     text-align: center;
     color: #fff;
-    font-size: 40px;
+    font-size: 36px;
+    font-weight: 400;
     line-height: normal;
     transition: background 0.2s ease;
   }

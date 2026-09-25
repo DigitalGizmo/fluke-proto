@@ -8,14 +8,11 @@
   // Copy read from the Figma challenge#1 / challenge#2 text layers.
   const GAME_TITLE = 'Fluke Matching Game';
   const GAME_INTRO =
-    'Humpback whales have unique patterns of black and white pigmentation and ' +
-    'scars on the underside of their flukes or tails. Like fingerprints are to ' +
-    'humans, no two whales have the same patterns. These patterns are the ' +
-    'inspiration for each whale’s name.';
+    'Humpback whales have unique patterns of black and white pigmentation and scars on the undersides of their flukes, or tails. Like human finger-prints, no two whales flukes have the same pattern. When deciding on a name for a whale, scientists find inspiration in the unique pattern on the whale’s fluke.' ;
   const GAME_SUBINTRO =
     'Try to match the fluke patterns and learn these whales’ names. ' +
-    'There are four challenges.';
-  const TAP_PROMPT = 'Tap the whale tail below that you think matches the tail on the left.';
+    'There are four challenges. Tap the whale tail below that you think matches the tail on the left.';
+  const TAP_PROMPT = '';
 
   // Option slots, relative to .bottom-area. Row-major, matching challenge#2 —
   // challenge#1's layers are arranged down the columns instead, but that reads
@@ -61,7 +58,7 @@
   .game-title {
     position: absolute;
     left: 75px;
-    top: 32px;
+    top: 20px;
     margin: 0;
     font-size: 72px;
     font-weight: 400;
@@ -73,31 +70,32 @@
   .game-intro {
     position: absolute;
     left: 75px;
-    top: 111px;
+    top: 116px;
     width: 874px;
     height: 170px;
     margin: 0;
     font-size: 28px;
-    line-height: normal;
+    line-height: 36px;
+    font-weight: 400;
     color: var(--text-pale);
   }
 
   .game-subintro {
     position: absolute;
     left: 1003px;
-    top: 111px;
+    top: 116px;
     width: 810px;
     height: 68px;
     margin: 0;
     font-size: 28px;
-    line-height: normal;
+    line-height: 36px;
     color: #fff;
   }
 
   .tap-prompt {
     position: absolute;
     left: 1003px;
-    top: 179px;
+    top: 186px;
     width: 824px;
     height: 50px;
     margin: 0;
@@ -108,8 +106,8 @@
 
   .btn-clues {
     position: absolute;
-    left: 1003px;
-    top: 229px;
+    left: 1666px;
+    top: 20px;
     width: 220px;
     height: 59px;
     background: var(--btn-bg);
