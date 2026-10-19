@@ -40,6 +40,7 @@
   </div>
 
   <p class="challenge-label">{challenge.title}</p>
+  <p class="photo-credit">All photos courtesy of the Center for Coastal Studies under NMFS ESA-MMPA permits 16325, 633-1483, 21485, 27984</p>
 
   {#each challenge.options as option, i (option.id)}
     <TailOption
@@ -145,12 +146,25 @@
   .challenge-label {
     position: absolute;
     left: 68px;
-    top: 544px;
+    top: 520px;
     width: 424px;
     height: 31px;
     margin: 0;
-    font-size: 32px;
+    font-size: 20px;
     line-height: normal;
     color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+  }
+
+  .photo-credit {
+    position: absolute;
+    left: 68px;
+    top: 716px;
+    height: 31px;
+    margin: 0;
+    font-size: 18px;
+    line-height: normal;
+    color: #a0bcc7;
   }
 </style>
